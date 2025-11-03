@@ -32,6 +32,26 @@
     }
   </style>
 </head>
+<script>
+  // ✅ Payment Config
+  const CONFIG = {
+    upiId: '8641030951-2@ybl',              // UPDATED UPI ID
+    whatsappNumber: '918641039051',         // WhatsApp number
+    qrImageUrl: 'images/qr-phonepe.png'     // Path to QR image
+  };
+
+  // ✅ Open Payment Modal
+  function openPaymentModal() {
+    document.getElementById('paymentModal').classList.remove('hidden');
+    document.getElementById('upi-id').textContent = CONFIG.upiId;
+    document.getElementById('qr-image').src = CONFIG.qrImageUrl;
+  }
+
+  // ✅ Close Payment Modal
+  function closePaymentModal() {
+    document.getElementById('paymentModal').classList.add('hidden');
+  }
+</script>
 
 <body class="bg-black text-white">
 
