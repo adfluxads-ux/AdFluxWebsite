@@ -4,69 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pricing - AdFlux</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .plan-card {
+      transition: all 0.3s ease;
+    }
+    .plan-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+    }
+  </style>
 </head>
-
-<body class="bg-black text-white font-sans">
+<body class="bg-gradient-to-b from-black via-gray-900 to-black text-white">
 
   <!-- Header -->
-  <header class="text-center py-10 border-b border-red-700">
-    <h1 class="text-4xl font-bold text-red-500">Our Pricing Plans</h1>
-    <p class="text-gray-400 mt-3">Choose the perfect plan to boost your brand with AdFlux</p>
-  </header>
+  <section class="text-center py-16">
+    <h1 class="text-4xl font-extrabold text-red-500 mb-3">Our Pricing Plans</h1>
+    <p class="text-gray-300 text-lg">Choose the perfect plan to boost your brand with AdFlux</p>
+  </section>
 
-  <!-- Pricing Section -->
-  <section class="flex flex-wrap justify-center gap-8 py-16">
+  <!-- Pricing Cards -->
+  <section class="flex flex-col md:flex-row justify-center items-center gap-8 px-6 pb-20">
 
     <!-- Starter Plan -->
-    <div class="bg-[#111] hover:bg-[#161616] transition-all border border-red-700 rounded-2xl p-8 w-80 shadow-lg hover:shadow-red-500/30">
+    <div class="plan-card relative bg-gray-900 border border-red-700 rounded-2xl p-8 w-full md:w-80 text-center">
       <h2 class="text-2xl font-bold text-red-400 mb-4">Starter</h2>
-      <p class="text-gray-300 text-lg mb-6">Perfect for small creators</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹7999 <span class="text-sm text-gray-400">/ month</span></h3>
-      <ul class="text-gray-400 space-y-2 mb-6">
+      <p class="text-gray-400 mb-6">Perfect for small creators</p>
+      <h3 class="text-4xl font-extrabold mb-6">
+        ₹<span class="text-red-500">7,999</span>
+        <span class="text-sm text-gray-400">/month</span>
+      </h3>
+      <ul class="text-left space-y-2 mb-6">
         <li>✅ YouTube Channel Growth Organically</li>
         <li>✅ 1K Subscribers & 4K Hour WatchTime</li>
         <li>✅ Real Engagement Guarantee</li>
       </ul>
-      <a <a href="https://wa.me/918641030951?text=Hi%20AdFlux%2C%20I%20want%20the%20Starter%20plan!" target="_blank" 
- class="inline-block bg-red-600 px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Choose Plan</a>
+      <a href="https://wa.me/918641039051?text=Hi%20AdFlux%2C%20I%20want%20the%20Starter%20plan!"
+         target="_blank"
+         class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold text-white shadow-md hover:shadow-red-500/50 hover:scale-105 transform transition-all duration-300">
+         Choose Plan
+      </a>
     </div>
 
-    <!-- Professional Plan -->
-    <div class="bg-[#111] hover:bg-[#161616] transition-all border-2 border-red-500 rounded-2xl p-8 w-80 shadow-xl hover:shadow-red-500/40 scale-105">
+    <!-- Professional Plan (Most Popular) -->
+    <div class="plan-card relative bg-gray-900 border border-red-700 rounded-2xl p-8 w-full md:w-80 text-center">
+      <div class="absolute -top-3 right-3 bg-red-600 text-white text-xs px-2 py-1 rounded-full">Most Popular</div>
       <h2 class="text-2xl font-bold text-red-400 mb-4">Professional</h2>
-      <p class="text-gray-300 text-lg mb-6">Ideal for serious creators</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹9,999 <span class="text-sm text-gray-400">/ month</span></h3>
-      <ul class="text-gray-400 space-y-2 mb-6">
+      <p class="text-gray-400 mb-6">Ideal for serious creators</p>
+      <h3 class="text-4xl font-extrabold mb-6">
+        ₹<span class="text-red-500">9,999</span>
+        <span class="text-sm text-gray-400">/month</span>
+      </h3>
+      <ul class="text-left space-y-2 mb-6">
         <li>✅ Full YouTube Growth + Shorts Boost</li>
         <li>✅ Instagram + Facebook Marketing</li>
         <li>✅ Dedicated Support 24/7</li>
       </ul>
-      <a <a href="https://wa.me/918641030951?text=Hi%20AdFlux%2C%20I%20want%20the%20Starter%20plan!" target="_blank"
- class="inline-block bg-red-600 px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Choose Plan</a>
+      <a href="https://wa.me/918641039051?text=Hi%20AdFlux%2C%20I%20want%20the%20Professional%20plan!"
+         target="_blank"
+         class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold text-white shadow-md hover:shadow-red-500/50 hover:scale-105 transform transition-all duration-300">
+         Choose Plan
+      </a>
     </div>
 
     <!-- Enterprise Plan -->
-    <div class="bg-[#111] hover:bg-[#161616] transition-all border border-red-700 rounded-2xl p-8 w-80 shadow-lg hover:shadow-red-500/30">
+    <div class="plan-card relative bg-gray-900 border border-red-700 rounded-2xl p-8 w-full md:w-80 text-center">
       <h2 class="text-2xl font-bold text-red-400 mb-4">Enterprise</h2>
-      <p class="text-gray-300 text-lg mb-6">For agencies & large creators</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹14,999 <span class="text-sm text-gray-400">/ month</span></h3>
-      <ul class="text-gray-400 space-y-2 mb-6">
+      <p class="text-gray-400 mb-6">For agencies & large creators</p>
+      <h3 class="text-4xl font-extrabold mb-6">
+        ₹<span class="text-red-500">14,999</span>
+        <span class="text-sm text-gray-400">/month</span>
+      </h3>
+      <ul class="text-left space-y-2 mb-6">
         <li>✅ Custom Growth Strategy</li>
         <li>✅ Multi-Platform Promotion</li>
         <li>✅ Dedicated AdFlux Manager</li>
       </ul>
-      <a <a href="https://wa.me/918641030951?text=Hi%20AdFlux%2C%20I%20want%20the%20Starter%20plan!" target="_blank" 
- class="inline-block bg-red-600 px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition">Choose Plan</a>
+      <a href="https://wa.me/918641039051?text=Hi%20AdFlux%2C%20I%20want%20the%20Enterprise%20plan!"
+         target="_blank"
+         class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold text-white shadow-md hover:shadow-red-500/50 hover:scale-105 transform transition-all duration-300">
+         Choose Plan
+      </a>
     </div>
 
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-8 border-t border-red-700 text-gray-500">
-    <p>© 2025 AdFlux. All Rights Reserved.</p>
+  <footer class="text-center text-gray-500 pb-10">
+    © 2025 AdFlux. All Rights Reserved.
   </footer>
 
 </body>
