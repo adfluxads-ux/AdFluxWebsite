@@ -1,223 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pricing - AdFlux (Payments)</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .plan-card { transition: all 0.25s ease; }
-    .plan-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(255,0,0,0.18); }
-    /* modal backdrop */
-    .modal-backdrop { background: rgba(0,0,0,0.65); }
-  </style>
-</head>
-<body class="bg-gradient-to-b from-black via-gray-900 to-black text-white min-h-screen">
+<!-- Pricing Section -->
+<section id="pricing" class="py-16 bg-gray-950 text-center text-white">
+  <h2 class="text-4xl font-extrabold mb-10 text-white">Pricing Plans</h2>
 
-  <!-- Header -->
-  <header class="text-center py-12">
-    <h1 class="text-4xl font-extrabold text-red-500">Pricing & Payment</h1>
-    <p class="text-gray-300 mt-2">Choose plan — pay via UPI / WhatsApp. Manual verification after payment.</p>
-  </header>
-
-  <!-- Cards -->
-  <main class="flex flex-col md:flex-row justify-center items-start gap-8 px-6 pb-20">
-    <!-- Starter -->
-    <div class="plan-card bg-gray-900 border border-red-700 rounded-2xl p-8 w-full md:w-80 text-center">
-      <h2 class="text-2xl font-bold text-red-400 mb-2">Starter</h2>
-      <p class="text-gray-400 mb-4">Perfect for small creators</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹<span class="text-red-500">7,999</span><span class="text-sm text-gray-400">/mo</span></h3>
-      <ul class="text-left text-gray-300 mb-6 space-y-2">
-        <li>✅ YouTube growth</li>
-        <li>✅ Shorts boost</li>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+    
+    <!-- Basic Plan -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
+      <h3 class="text-2xl font-bold mb-3">Basic</h3>
+      <p class="text-gray-400 mb-6">Perfect for beginners starting out</p>
+      <p class="text-5xl font-extrabold mb-6">₹4,999</p>
+      <ul class="text-gray-400 space-y-3 mb-8 text-left">
+        <li>✔️ 12 Live Classes</li>
+        <li>✔️ 3 Months Access</li>
+        <li>✔️ Complete Music Production</li>
+        <li>✔️ Project Files Included</li>
       </ul>
-      <button onclick="openPayModal('Starter','₹7,999')" class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold hover:scale-105 transform transition">Choose Plan</button>
+      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
+        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">
+        Pay Now
+      </button>
     </div>
 
-    <!-- Professional -->
-    <div class="plan-card relative bg-gray-900 border-2 border-red-500 rounded-2xl p-8 w-full md:w-80 text-center">
-      <div class="absolute -top-3 right-3 bg-red-600 text-white text-xs px-2 py-1 rounded-full">Most Popular</div>
-      <h2 class="text-2xl font-bold text-red-400 mb-2">Professional</h2>
-      <p class="text-gray-400 mb-4">Ideal for serious creators</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹<span class="text-red-500">9,999</span><span class="text-sm text-gray-400">/mo</span></h3>
-      <ul class="text-left text-gray-300 mb-6 space-y-2">
-        <li>✅ Full growth + ads</li>
-        <li>✅ Support 24/7</li>
+    <!-- Pro Plan -->
+    <div class="bg-purple-700 border-2 border-purple-400 rounded-2xl p-8 shadow-lg transform scale-105">
+      <h3 class="text-2xl font-bold mb-3">Pro</h3>
+      <p class="text-gray-100 mb-6">Ideal for serious producers</p>
+      <p class="text-5xl font-extrabold mb-6">₹9,999</p>
+      <ul class="text-gray-100 space-y-3 mb-8 text-left">
+        <li>✔️ 12 Live Classes</li>
+        <li>✔️ 1-on-1 Feedback</li>
+        <li>✔️ Industry Templates</li>
+        <li>✔️ Mixing & Mastering Guide</li>
       </ul>
-      <button onclick="openPayModal('Professional','₹9,999')" class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold hover:scale-105 transform transition">Choose Plan</button>
+      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
+        class="w-full bg-white text-purple-700 hover:bg-purple-200 py-3 rounded-lg font-semibold transition">
+        Pay Now
+      </button>
     </div>
 
-    <!-- Enterprise -->
-    <div class="plan-card bg-gray-900 border border-red-700 rounded-2xl p-8 w-full md:w-80 text-center">
-      <h2 class="text-2xl font-bold text-red-400 mb-2">Enterprise</h2>
-      <p class="text-gray-400 mb-4">For agencies & brands</p>
-      <h3 class="text-3xl font-extrabold mb-4">₹<span class="text-red-500">14,999</span><span class="text-sm text-gray-400">/mo</span></h3>
-      <ul class="text-left text-gray-300 mb-6 space-y-2">
-        <li>✅ Custom plan</li>
-        <li>✅ Dedicated manager</li>
+    <!-- Premium Plan -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
+      <h3 class="text-2xl font-bold mb-3">Premium</h3>
+      <p class="text-gray-400 mb-6">For professionals and advanced learners</p>
+      <p class="text-5xl font-extrabold mb-6">₹19,999</p>
+      <ul class="text-gray-400 space-y-3 mb-8 text-left">
+        <li>✔️ All Pro Features</li>
+        <li>✔️ Private Mentorship</li>
+        <li>✔️ Exclusive Plugins Walkthrough</li>
+        <li>✔️ Certificate of Excellence</li>
       </ul>
-      <button onclick="openPayModal('Enterprise','₹14,999')" class="inline-block bg-gradient-to-r from-red-600 to-red-700 px-6 py-2 rounded-lg font-semibold hover:scale-105 transform transition">Choose Plan</button>
-    </div>
-  </main>
-
-  <!-- Modal (hidden by default) -->
-  <div id="payModal" class="fixed inset-0 hidden items-center justify-center z-50">
-    <div class="modal-backdrop absolute inset-0"></div>
-
-    <div class="relative z-50 w-11/12 md:w-3/4 lg:w-2/4 bg-[#0b0b0b] border border-red-700 rounded-2xl p-6">
-      <div class="flex justify-between items-start">
-        <div>
-          <h3 id="modalPlan" class="text-2xl font-bold text-red-400">Plan</h3>
-          <p id="modalPrice" class="text-gray-300 mt-1">Price</p>
-        </div>
-        <button onclick="closeModal()" class="text-gray-400 hover:text-white">✕</button>
-      </div>
-
-      <div class="mt-5 md:flex gap-6">
-        <!-- QR + UPI -->
-        <div class="md:w-1/2 flex flex-col items-center">
-          <!-- Replace src with your QR image URL -->
-          <img id="qrImage" src="https://via.placeholder.com/220x220.png?text=QR+Code" alt="UPI QR" class="w-48 h-48 object-cover rounded-md border border-gray-700" />
-          <p class="text-gray-400 mt-3 text-sm">Scan QR to pay</p>
-
-          <div class="mt-4 w-full">
-            <label class="text-xs text-gray-400">UPI ID</label>
-            <div class="mt-1 flex items-center justify-between bg-[#0b0b0b] border border-gray-800 rounded-md px-3 py-2">
-              <span id="upiId" class="select-all text-sm">8641030951-2@ybl</span>
-              <button onclick="copyUPI()" class="ml-3 text-sm bg-red-600 px-3 py-1 rounded hover:bg-red-700">Copy</button>
-            </div>
-          </div>
-
-          <p class="text-gray-500 text-xs mt-3 text-center px-2">After paying, upload your payment screenshot below and click "Send via WhatsApp" — attach the screenshot in the WhatsApp message.</p>
-        </div>
-
-        <!-- Form -->
-        <div class="md:w-1/2 mt-6 md:mt-0">
-          <label class="text-sm text-gray-300">Your Name</label>
-          <input id="payerName" type="text" placeholder="Your name" class="w-full mt-2 bg-[#0b0b0b] border border-gray-800 rounded px-3 py-2 text-white" />
-
-          <label class="text-sm text-gray-300 mt-4">Mobile (for WhatsApp)</label>
-          <input id="payerMobile" type="tel" placeholder="91xxxxxxxxxx" class="w-full mt-2 bg-[#0b0b0b] border border-gray-800 rounded px-3 py-2 text-white" />
-
-          <label class="text-sm text-gray-300 mt-4">Transaction ID / UTR (optional)</label>
-          <input id="txnId" type="text" placeholder="Bank/UPI txn id" class="w-full mt-2 bg-[#0b0b0b] border border-gray-800 rounded px-3 py-2 text-white" />
-
-          <label class="text-sm text-gray-300 mt-4">Upload payment screenshot</label>
-          <input id="screenshot" type="file" accept="image/*" class="w-full mt-2 text-sm text-gray-300" onchange="previewScreenshot(event)" />
-
-          <div id="previewBox" class="mt-3 hidden">
-            <p class="text-xs text-gray-400">Preview:</p>
-            <img id="previewImage" src="" alt="preview" class="w-36 h-36 object-cover rounded-md border border-gray-700 mt-2" />
-          </div>
-
-          <div class="flex gap-3 mt-5">
-            <!-- WhatsApp button -->
-            <button onclick="sendWhatsApp()" class="flex-1 bg-green-600 px-4 py-2 rounded font-semibold hover:scale-105 transform transition">
-              Send via WhatsApp
-            </button>
-
-            <!-- Email fallback (mailto) -->
-            <button onclick="sendEmail()" class="flex-1 bg-gray-800 border border-gray-700 px-4 py-2 rounded font-semibold hover:scale-105 transform transition">
-              Notify via Email
-            </button>
-          </div>
-
-          <p class="text-xs text-gray-500 mt-3">Note: If you want automatic collection into Google Sheets, I can add a Google-Forms / Apps Script endpoint — tell me and I'll set it up.</p>
-        </div>
-      </div>
+      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
+        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">
+        Pay Now
+      </button>
     </div>
   </div>
+</section>
 
-  <footer class="text-center text-gray-500 pb-10">
-    © 2025 AdFlux. All Rights Reserved.
-  </footer>
+<!-- Payment Modal -->
+<div id="paymentModal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-70 z-50">
+  <div class="bg-white rounded-2xl shadow-xl w-96 max-w-full text-center p-6 relative">
+    
+    <!-- Close Button -->
+    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
+      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold">
+      &times;
+    </button>
 
-  <!-- JS -->
-  <script>
-    // ============= CONFIG - change these to your real values =============
-    const CONFIG = {
-      upiId: '8641030951-2@ybl',              // Tera UPI ID
-      whatsappNumber: '918641039051',                // Tera WA number (country code + no)
-      qrImageUrl: 'https://via.placeholder.com/220x220.png?text=QR+Code' // Change to real QR image URL
-    };
-    // =====================================================================
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">Complete Your Payment</h2>
+    <p class="text-sm text-gray-600 mb-4">Scan the QR or use UPI ID below</p>
 
-    document.getElementById('upiId').innerText = CONFIG.upiId;
-    document.getElementById('qrImage').src = CONFIG.qrImageUrl;
+    <!-- QR Image -->
+    <div class="flex justify-center mb-4">
+      <img src="images/qr-phonepe.png" alt="PhonePe QR" class="w-48 h-48 rounded-xl shadow-md border border-gray-200">
+    </div>
 
-    function openPayModal(planName, price) {
-      document.getElementById('modalPlan').innerText = planName;
-      document.getElementById('modalPrice').innerText = price;
-      // clear previous inputs
-      document.getElementById('payerName').value = '';
-      document.getElementById('payerMobile').value = '';
-      document.getElementById('txnId').value = '';
-      document.getElementById('screenshot').value = '';
-      document.getElementById('previewBox').classList.add('hidden');
-      // show modal
-      document.getElementById('payModal').classList.remove('hidden');
-      document.getElementById('payModal').classList.add('flex');
-    }
+    <!-- UPI ID -->
+    <div class="bg-gray-100 rounded-lg py-2 px-3 flex items-center justify-center gap-2 mb-3">
+      <span class="font-medium text-gray-800">UPI ID:</span>
+      <span id="upiId" class="text-purple-600 font-semibold">8641030951-2@ybl</span>
+      <button onclick="copyUPI()" class="text-xs bg-purple-600 text-white px-2 py-1 rounded-md hover:bg-purple-700">Copy</button>
+    </div>
 
-    function closeModal() {
-      document.getElementById('payModal').classList.add('hidden');
-      document.getElementById('payModal').classList.remove('flex');
-    }
+    <!-- Notify Button -->
+    <a href="mailto:adfluxads@gmail.com?subject=Payment Done&body=I have completed the payment. Please confirm." 
+       class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+      I’ve Paid, Notify Admin
+    </a>
 
-    function copyUPI() {
-      const upi = CONFIG.upiId;
-      navigator.clipboard.writeText(upi).then(() => {
-        alert('UPI ID copied: ' + upi);
-      }).catch(() => {
-        prompt('Copy UPI ID', upi);
-      });
-    }
+  </div>
+</div>
 
-    // Screenshot preview
-    function previewScreenshot(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      const url = URL.createObjectURL(file);
-      document.getElementById('previewImage').src = url;
-      document.getElementById('previewBox').classList.remove('hidden');
-    }
-
-    // Open WhatsApp with prefilled message (user should attach screenshot manually)
-    function sendWhatsApp() {
-      const plan = document.getElementById('modalPlan').innerText;
-      const price = document.getElementById('modalPrice').innerText;
-      const name = encodeURIComponent(document.getElementById('payerName').value || '—');
-      const mobile = encodeURIComponent(document.getElementById('payerMobile').value || '—');
-      const txn = encodeURIComponent(document.getElementById('txnId').value || '—');
-
-      // message template
-      const message = `Hi%20AdFlux%2C%20I%20have%20paid%20for%20the%20${encodeURIComponent(plan)}%20plan%20(${encodeURIComponent(price)})%0AName%3A%20${name}%0AMobile%3A%20${mobile}%0ATransaction%20ID%3A%20${txn}%0A%0APlease%20check%20the%20attached%20payment%20screenshot.`;
-
-      // open whatsapp chat
-      const wa = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + message;
-      window.open(wa, '_blank');
-    }
-
-    // Open mail client with prefilled subject/body.
-    // Note: Attaching screenshot automatically via mailto is not reliable; user can attach manually.
-    function sendEmail() {
-      const plan = document.getElementById('modalPlan').innerText;
-      const price = document.getElementById('modalPrice').innerText;
-      const name = encodeURIComponent(document.getElementById('payerName').value || '—');
-      const mobile = encodeURIComponent(document.getElementById('payerMobile').value || '—');
-      const txn = encodeURIComponent(document.getElementById('txnId').value || '—');
-
-      const subject = encodeURIComponent('Payment for ' + plan + ' (' + price + ')');
-      const body = encodeURIComponent(
-        'Hi AdFlux,%0A%0AI have paid for the ' + plan + ' plan (' + price + ').%0A%0A' +
-        'Name: ' + decodeURIComponent(name) + '%0AMobile: ' + decodeURIComponent(mobile) + '%0ATransaction ID: ' + decodeURIComponent(txn) +
-        '%0A%0APlease find the payment screenshot attached (attach manually if not auto-attached).%0A%0AThanks.'
-      );
-      // change this email to your real one
-      const to = 'adfluxads@gmail.com';
-
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    }
-  </script>
-</body>
-</html>
+<!-- Script -->
+<script>
+function copyUPI() {
+  const upi = document.getElementById("upiId").textContent;
+  navigator.clipboard.writeText(upi);
+  alert("✅ UPI ID copied: " + upi);
+}
+</script>
