@@ -58,4 +58,24 @@
         <p class="text-5xl font-extrabold mb-6">₹19,999</p>
         <ul class="text-gray-400 space-y-3 mb-8 text-left">
           <li>✅ All Pro Features</li>
-          <li>✅
+          <li>✅ instagram + Facebook + Youtube 
+            <!-- Payment Modal -->
+<div id="paymentModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-gray-900 rounded-2xl p-8 text-center relative w-96 shadow-xl">
+    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
+            class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
+    <h2 class="text-2xl font-bold text-white mb-4">Complete Your Payment</h2>
+
+    <img src="images/qr-phonepe.png" alt="UPI QR" class="mx-auto mb-3 w-40 rounded-lg shadow-lg">
+    <p class="text-sm text-gray-400">UPI ID: <span class="font-semibold text-white">8641030951-2@ybtl</span></p>
+
+    <p class="text-gray-400 text-sm mt-2">Scan the QR using PhonePe / Google Pay / Paytm and complete the payment.</p>
+    <p class="text-gray-400 text-sm mt-1">Once done, take a screenshot and send it to our WhatsApp.</p>
+
+    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
+            class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+      Close
+    </button>
+  </div>
+</div>
+
