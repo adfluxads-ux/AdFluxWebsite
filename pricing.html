@@ -1,81 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdFlux | Pricing</title>
-
-  <!-- ✅ Tailwind CSS link -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AdFlux - Pricing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #111;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      color: white;
+      border: 1px solid #f00;
+      box-shadow: 0 0 20px rgba(255,0,0,0.3);
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-950 text-white">
+<body class="bg-black text-white">
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="py-16 text-center">
-    <h2 class="text-4xl font-extrabold mb-10 text-white">Pricing Plans</h2>
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-bold text-red-500 mb-4">Pricing & Payment</h1>
+    <p class="text-gray-400 mb-8">Choose your plan — pay via UPI or WhatsApp</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-
-      <!-- Basic Plan -->
-      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
-        <h3 class="text-2xl font-bold mb-3">Basic</h3>
-        <p class="text-gray-400 mb-6">Perfect for beginners starting out</p>
-        <p class="text-5xl font-extrabold mb-6">₹4,999</p>
-        <ul class="text-gray-400 space-y-3 mb-8 text-left">
-          <li>✅ 12 Live Classes</li>
-          <li>✅ 3 Months Access</li>
-          <li>✅ Complete Music Production</li>
-          <li>✅ Project Files Included</li>
+    <div class="flex flex-wrap justify-center gap-8">
+      <!-- Starter Plan -->
+      <div class="border border-red-700 p-6 rounded-xl w-80">
+        <h2 class="text-2xl text-red-400 font-bold mb-2">Starter</h2>
+        <p class="text-gray-300 mb-4">For small creators</p>
+        <h3 class="text-3xl font-extrabold mb-2">₹7,999<span class="text-sm text-gray-400">/month</span></h3>
+        <ul class="text-left mb-4 text-sm text-gray-300">
+          <li>✅ YouTube Growth</li>
+          <li>✅ Shorts Boost</li>
+          <li>✅ Real Engagement</li>
         </ul>
-        <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
-                class="w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-semibold">
-          Pay Now
-        </button>
+        <button class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold"
+                onclick="openModal('Starter', 7999)">Choose Plan</button>
       </div>
 
-      <!-- Pro Plan -->
-      <div class="bg-purple-700 border border-purple-400 rounded-2xl p-8 shadow-lg transform scale-105">
-        <h3 class="text-2xl font-bold mb-3">Pro</h3>
-        <p class="text-gray-100 mb-6">Ideal for serious producers</p>
-        <p class="text-5xl font-extrabold mb-6">₹9,999</p>
-        <ul class="text-gray-100 space-y-3 mb-8 text-left">
-          <li>✅ 12 Live Classes</li>
-          <li>✅ 1-on-1 Feedback</li>
-          <li>✅ Industry Templates</li>
-          <li>✅ Mixing & Mastering Guide</li>
+      <!-- Professional -->
+      <div class="border border-red-700 p-6 rounded-xl w-80">
+        <h2 class="text-2xl text-red-400 font-bold mb-2">Professional</h2>
+        <p class="text-gray-300 mb-4">Ideal for serious creators</p>
+        <h3 class="text-3xl font-extrabold mb-2">₹9,999<span class="text-sm text-gray-400">/month</span></h3>
+        <ul class="text-left mb-4 text-sm text-gray-300">
+          <li>✅ Full Growth + Ads</li>
+          <li>✅ Instagram + FB Boost</li>
+          <li>✅ 24/7 Support</li>
         </ul>
-        <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
-                class="w-full bg-black hover:bg-gray-900 py-3 rounded-lg font-semibold">
-          Pay Now
-        </button>
+        <button class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold"
+                onclick="openModal('Professional', 9999)">Choose Plan</button>
       </div>
 
-      <!-- Premium Plan -->
-      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
-        <h3 class="text-2xl font-bold mb-3">Premium</h3>
-        <p class="text-gray-400 mb-6">For professionals and advanced learners</p>
-        <p class="text-5xl font-extrabold mb-6">₹19,999</p>
-        <ul class="text-gray-400 space-y-3 mb-8 text-left">
-          <li>✅ All Pro Features</li>
-          <li>✅ instagram + Facebook + Youtube 
-            <!-- Payment Modal -->
-<div id="paymentModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-  <div class="bg-gray-900 rounded-2xl p-8 text-center relative w-96 shadow-xl">
-    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
-            class="absolute top-3 right-3 text-gray-400 hover:text-white text-2xl">&times;</button>
-    <h2 class="text-2xl font-bold text-white mb-4">Complete Your Payment</h2>
+      <!-- Enterprise -->
+      <div class="border border-red-700 p-6 rounded-xl w-80">
+        <h2 class="text-2xl text-red-400 font-bold mb-2">Enterprise</h2>
+        <p class="text-gray-300 mb-4">For agencies & brands</p>
+        <h3 class="text-3xl font-extrabold mb-2">₹14,999<span class="text-sm text-gray-400">/month</span></h3>
+        <ul class="text-left mb-4 text-sm text-gray-300">
+          <li>✅ Custom Strategy</li>
+          <li>✅ Multi-Platform</li>
+          <li>✅ Dedicated Manager</li>
+        </ul>
+        <button class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg font-semibold"
+                onclick="openModal('Enterprise', 14999)">Choose Plan</button>
+      </div>
+    </div>
+  </section>
 
-    <img src="images/qr-phonepe.png" alt="UPI QR" class="mx-auto mb-3 w-40 rounded-lg shadow-lg">
-    <p class="text-sm text-gray-400">UPI ID: <span class="font-semibold text-white">8641030951-2@ybtl</span></p>
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <h2 class="text-2xl text-red-400 font-bold mb-2" id="planName"></h2>
+      <p class="text-gray-400 mb-4" id="planPrice"></p>
 
-    <p class="text-gray-400 text-sm mt-2">Scan the QR using PhonePe / Google Pay / Paytm and complete the payment.</p>
-    <p class="text-gray-400 text-sm mt-1">Once done, take a screenshot and send it to our WhatsApp.</p>
+      <h3 class="text-lg font-semibold mb-2">Scan to Pay</h3>
+      <img src="images/qr.png" alt="UPI QR" class="mx-auto mb-3 w-40 rounded-lg shadow-lg">
+      <p class="text-sm text-gray-400">UPI ID: <span class="font-semibold text-white">8641030951-2@ybtl</span></p>
 
-    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
-            class="mt-4 bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition">
-      Close
-    </button>
+      <form class="mt-4 space-y-3">
+        <input type="text" placeholder="Your Name" class="w-full p-2 rounded bg-gray-800">
+        <input type="text" placeholder="Mobile (for WhatsApp)" class="w-full p-2 rounded bg-gray-800">
+        <input type="text" placeholder="Transaction ID / UTR (optional)" class="w-full p-2 rounded bg-gray-800">
+        <input type="file" class="w-full p-2 rounded bg-gray-800">
+        <div class="flex justify-between gap-3 mt-3">
+          <a href="#" id="whatsappLink" target="_blank" 
+             class="flex-1 bg-green-600 hover:bg-green-700 py-2 rounded-lg font-semibold">Send via WhatsApp</a>
+          <button type="button" class="flex-1 bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-semibold">Notify via Email</button>
+        </div>
+      </form>
+
+      <button onclick="closeModal()" class="mt-4 text-gray-400 hover:text-red-400">Close</button>
+    </div>
   </div>
-</div>
 
+  <script>
+    const modal = document.getElementById('paymentModal');
+    const planNameEl = document.getElementById('planName');
+    const planPriceEl = document.getElementById('planPrice');
+    const whatsappLink = document.getElementById('whatsappLink');
+
+    function openModal(plan, price) {
+      modal.classList.add('active');
+      planNameEl.innerText = plan + " Plan";
+      planPriceEl.innerText = "₹" + price + "/month";
+      whatsappLink.href = `https://wa.me/918641030951?text=Hi, I want to purchase the ${plan} plan (₹${price})`;
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
