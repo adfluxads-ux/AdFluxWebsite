@@ -1,102 +1,61 @@
-<!-- Pricing Section -->
-<section id="pricing" class="py-16 bg-gray-950 text-center text-white">
-  <h2 class="text-4xl font-extrabold mb-10 text-white">Pricing Plans</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdFlux | Pricing</title>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-    
-    <!-- Basic Plan -->
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
-      <h3 class="text-2xl font-bold mb-3">Basic</h3>
-      <p class="text-gray-400 mb-6">Perfect for beginners starting out</p>
-      <p class="text-5xl font-extrabold mb-6">₹4,999</p>
-      <ul class="text-gray-400 space-y-3 mb-8 text-left">
-        <li>✔️ 12 Live Classes</li>
-        <li>✔️ 3 Months Access</li>
-        <li>✔️ Complete Music Production</li>
-        <li>✔️ Project Files Included</li>
-      </ul>
-      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
-        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">
-        Pay Now
-      </button>
-    </div>
+  <!-- ✅ Tailwind CSS link -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <!-- Pro Plan -->
-    <div class="bg-purple-700 border-2 border-purple-400 rounded-2xl p-8 shadow-lg transform scale-105">
-      <h3 class="text-2xl font-bold mb-3">Pro</h3>
-      <p class="text-gray-100 mb-6">Ideal for serious producers</p>
-      <p class="text-5xl font-extrabold mb-6">₹9,999</p>
-      <ul class="text-gray-100 space-y-3 mb-8 text-left">
-        <li>✔️ 12 Live Classes</li>
-        <li>✔️ 1-on-1 Feedback</li>
-        <li>✔️ Industry Templates</li>
-        <li>✔️ Mixing & Mastering Guide</li>
-      </ul>
-      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
-        class="w-full bg-white text-purple-700 hover:bg-purple-200 py-3 rounded-lg font-semibold transition">
-        Pay Now
-      </button>
-    </div>
+<body class="bg-gray-950 text-white">
 
-    <!-- Premium Plan -->
-    <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
-      <h3 class="text-2xl font-bold mb-3">Premium</h3>
-      <p class="text-gray-400 mb-6">For professionals and advanced learners</p>
-      <p class="text-5xl font-extrabold mb-6">₹19,999</p>
-      <ul class="text-gray-400 space-y-3 mb-8 text-left">
-        <li>✔️ All Pro Features</li>
-        <li>✔️ Private Mentorship</li>
-        <li>✔️ Exclusive Plugins Walkthrough</li>
-        <li>✔️ Certificate of Excellence</li>
-      </ul>
-      <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
-        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">
-        Pay Now
-      </button>
-    </div>
-  </div>
-</section>
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-16 text-center">
+    <h2 class="text-4xl font-extrabold mb-10 text-white">Pricing Plans</h2>
 
-<!-- Payment Modal -->
-<div id="paymentModal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-70 z-50">
-  <div class="bg-white rounded-2xl shadow-xl w-96 max-w-full text-center p-6 relative">
-    
-    <!-- Close Button -->
-    <button onclick="document.getElementById('paymentModal').classList.add('hidden')" 
-      class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold">
-      &times;
-    </button>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
 
-    <!-- Title -->
-    <h2 class="text-2xl font-bold text-gray-800 mb-2">Complete Your Payment</h2>
-    <p class="text-sm text-gray-600 mb-4">Scan the QR or use UPI ID below</p>
+      <!-- Basic Plan -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
+        <h3 class="text-2xl font-bold mb-3">Basic</h3>
+        <p class="text-gray-400 mb-6">Perfect for beginners starting out</p>
+        <p class="text-5xl font-extrabold mb-6">₹4,999</p>
+        <ul class="text-gray-400 space-y-3 mb-8 text-left">
+          <li>✅ 12 Live Classes</li>
+          <li>✅ 3 Months Access</li>
+          <li>✅ Complete Music Production</li>
+          <li>✅ Project Files Included</li>
+        </ul>
+        <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
+                class="w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-lg font-semibold">
+          Pay Now
+        </button>
+      </div>
 
-    <!-- QR Image -->
-    <div class="flex justify-center mb-4">
-      <img src="images/qr-phonepe.png" alt="PhonePe QR" class="w-48 h-48 rounded-xl shadow-md border border-gray-200">
-    </div>
+      <!-- Pro Plan -->
+      <div class="bg-purple-700 border border-purple-400 rounded-2xl p-8 shadow-lg transform scale-105">
+        <h3 class="text-2xl font-bold mb-3">Pro</h3>
+        <p class="text-gray-100 mb-6">Ideal for serious producers</p>
+        <p class="text-5xl font-extrabold mb-6">₹9,999</p>
+        <ul class="text-gray-100 space-y-3 mb-8 text-left">
+          <li>✅ 12 Live Classes</li>
+          <li>✅ 1-on-1 Feedback</li>
+          <li>✅ Industry Templates</li>
+          <li>✅ Mixing & Mastering Guide</li>
+        </ul>
+        <button onclick="document.getElementById('paymentModal').classList.remove('hidden')" 
+                class="w-full bg-black hover:bg-gray-900 py-3 rounded-lg font-semibold">
+          Pay Now
+        </button>
+      </div>
 
-    <!-- UPI ID -->
-    <div class="bg-gray-100 rounded-lg py-2 px-3 flex items-center justify-center gap-2 mb-3">
-      <span class="font-medium text-gray-800">UPI ID:</span>
-      <span id="upiId" class="text-purple-600 font-semibold">8641030951-2@ybl</span>
-      <button onclick="copyUPI()" class="text-xs bg-purple-600 text-white px-2 py-1 rounded-md hover:bg-purple-700">Copy</button>
-    </div>
-
-    <!-- Notify Button -->
-    <a href="mailto:adfluxads@gmail.com?subject=Payment Done&body=I have completed the payment. Please confirm." 
-       class="block bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition">
-      I’ve Paid, Notify Admin
-    </a>
-
-  </div>
-</div>
-
-<!-- Script -->
-<script>
-function copyUPI() {
-  const upi = document.getElementById("upiId").textContent;
-  navigator.clipboard.writeText(upi);
-  alert("✅ UPI ID copied: " + upi);
-}
-</script>
+      <!-- Premium Plan -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/20 transition">
+        <h3 class="text-2xl font-bold mb-3">Premium</h3>
+        <p class="text-gray-400 mb-6">For professionals and advanced learners</p>
+        <p class="text-5xl font-extrabold mb-6">₹19,999</p>
+        <ul class="text-gray-400 space-y-3 mb-8 text-left">
+          <li>✅ All Pro Features</li>
+          <li>✅
