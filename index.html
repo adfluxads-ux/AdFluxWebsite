@@ -375,7 +375,63 @@
   </p>
   <p class="text-xs mt-2">
     Designed & Developed by <span class="text-red-500 font-semibold">AdFlux Team</span>
-  </p>
+  </p> <!-- STATS / ACHIEVEMENTS SECTION -->
+<section class="bg-black text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-10 text-blue-500">AdFlux Achievements</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-bold text-green-400 counter" data-target="1200">0</span>
+        <p class="mt-3 text-lg text-gray-300">👥 Happy Clients</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-bold text-blue-400 counter" data-target="500">0</span>
+        <p class="mt-3 text-lg text-gray-300">📈 Projects Completed</p>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-bold text-yellow-400 counter" data-target="4.9">0</span>
+        <p class="mt-3 text-lg text-gray-300">⭐ Average Rating</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Counter Animation Script -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 50; // smaller = faster
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    // Run when visible on screen
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(counter);
+  });
+</script>
+
 </footer>
 
 </body>
