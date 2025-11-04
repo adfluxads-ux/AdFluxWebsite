@@ -366,7 +366,38 @@
              style="width: 22px; height: 22px;">
         Email
       </a>
-    </div>
+    </div><!-- Counter Animation Script -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const speed = 50; // smaller = faster
+      const increment = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 40);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    // Run when visible on screen
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(counter);
+  });
+</script>
+
   </footer>
 <!-- FOOTER SECTION -->
 <footer class="bg-black text-gray-400 text-center py-6 mt-10 border-t border-gray-800">
@@ -399,38 +430,6 @@
     </div>
   </div>
 </section>
-
-<!-- Counter Animation Script -->
-<script>
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-      const speed = 50; // smaller = faster
-      const increment = target / speed;
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(updateCount, 40);
-      } else {
-        counter.innerText = target;
-      }
-    };
-
-    // Run when visible on screen
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          updateCount();
-          observer.unobserve(counter);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    observer.observe(counter);
-  });
-</script>
 
 </footer>
 
