@@ -15,17 +15,8 @@
       background-size: cover;
       background-position: center;
     }
-    .glow-box {
-      box-shadow: 0 0 25px rgba(0, 255, 150, 0.15);
-      transition: all 0.7s ease-in-out;
-    }
-    .glow-box:hover {
-      box-shadow: 0 0 35px rgba(0, 255, 150, 0.5);
-      transform: scale(1.03);
-    }
   </style>
 </head>
-
 <body class="text-white">
 
   <!-- HERO SECTION -->
@@ -78,89 +69,164 @@
     </div>
   </section>
 
-  <!-- TRUST BADGE SECTION -->
-  <section class="max-w-6xl mx-auto px-6 py-12 text-center bg-black rounded-2xl shadow-lg my-10 border border-gray-800" id="trust-badges">
-    <h2 class="text-3xl font-bold mb-10 text-white">Why Choose <span class="text-blue-500">AdFlux?</span></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="flex flex-col items-center bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all badge">
-        <span class="text-4xl mb-3 text-green-400">✅</span>
-        <h3 class="font-semibold text-lg text-white">100% Non-Drop</h3>
-        <p class="text-gray-400 text-sm mt-2">Guaranteed retention across all services</p>
-      </div>
-      <div class="flex flex-col items-center bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all badge">
-        <span class="text-4xl mb-3 text-green-400">✅</span>
-        <h3 class="font-semibold text-lg text-white">Safe & Secure</h3>
-        <p class="text-gray-400 text-sm mt-2">No fake bots or harmful methods used</p>
-      </div>
-      <div class="flex flex-col items-center bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all badge">
-        <span class="text-4xl mb-3 text-green-400">✅</span>
-        <h3 class="font-semibold text-lg text-white">Real Engagement Only</h3>
-        <p class="text-gray-400 text-sm mt-2">100% genuine audience growth</p>
-      </div>
-      <div class="flex flex-col items-center bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all badge">
-        <span class="text-4xl mb-3 text-green-400">✅</span>
-        <h3 class="font-semibold text-lg text-white">Money-back Guarantee*</h3>
-        <p class="text-gray-400 text-sm mt-2">Full refund in case of service issues</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Animation Script -->
-  <script>
-    const badges = document.querySelectorAll('.badge');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0', 'transition-all', 'duration-700');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    badges.forEach(badge => observer.observe(badge));
-  </script>
-
-  <!-- PORTFOLIO SECTION -->
+  <!-- SERVICES SECTION -->
   <section class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
-    <p class="text-gray-400 mb-10">Some of our recent client success stories</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div class="bg-[#0f0f10] p-6 rounded-xl text-center md:text-left">
-        <h3 class="text-2xl font-bold mb-3">We are <span class="text-red-500">AdFlux</span></h3>
-        <p class="text-gray-300 mb-3">a next-gen digital agency dedicated to helping creators grow.</p>
-        <p class="text-gray-400">Our mission is to make digital growth affordable, authentic, and guaranteed.</p>
+    <h2 class="text-3xl font-bold mb-8">Our Premium Services</h2>
+  <!-- PORTFOLIO SECTION -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
+  <p class="text-gray-400 mb-10">Some of our recent client success stories</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Left Text Box -->
+    <div class="bg-[#0f0f10] p-6 rounded-xl text-center md:text-left">
+      <h3 class="text-2xl font-bold mb-3">We are <span class="text-red-500">AdFlux</span></h3>
+      <p class="text-gray-300 mb-3">
+        a next-gen digital agency dedicated to helping creators grow.
+      </p>
+      <p class="text-gray-400">
+        Our mission is to make digital growth affordable, authentic, and guaranteed.
+      </p>
+    </div>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Satisfaction Box</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Satisfaction Box</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth animation for glowing border */
+    .glow-box {
+      box-shadow: 0 0 25px rgba(0, 255, 150, 0.15);
+      transition: all 0.7s ease-in-out;
+    }
+    .glow-box:hover {
+      box-shadow: 0 0 35px rgba(0, 255, 150, 0.5);
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+<!-- Right Image Box -->
+<div class="relative flex justify-center group">
+  <!-- Background Image (Blurred Cinematic) -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Happy_clients_team_success.jpg"
+    alt="Client Satisfaction"
+    class="rounded-xl w-full md:w-[90%] h-[250px] md:h-[300px] object-cover object-center shadow-[0_0_25px_rgba(0,255,100,0.2)] blur-[6px] brightness-75 saturate-125 contrast-110 transition-all duration-700 ease-in-out group-hover:blur-[2px] group-hover:brightness-100 group-hover:scale-[1.02]"
+  >
+
+  <!-- Subtle Gradient Overlay -->
+  <div class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 via-black/20 to-transparent transition-all duration-700 ease-in-out group-hover:from-black/40 group-hover:via-black/10"></div>
+
+  <!-- Foreground Text with Glow -->
+  <div class="absolute bottom-4 right-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white px-4 py-2 rounded-md font-semibold text-sm shadow-[0_0_20px_rgba(0,255,150,0.4)] transition-all duration-700 ease-in-out group-hover:shadow-[0_0_30px_rgba(0,255,150,0.8)] group-hover:scale-110">
+    ✅ 98% Clients Satisfied
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-[#0f0f10] p-6 rounded-xl shadow-inner">
+        <div class="flex items-start gap-3">
+          <div class="bg-red-600 w-10 h-10 rounded-md flex items-center justify-center">▶</div>
+          <div>
+            <h3 class="font-semibold">YouTube Monetization Package</h3>
+            <p class="text-sm text-gray-400 mt-2">100% Guarantee</p>
+          </div>
+        </div>
       </div>
-      <div class="relative flex justify-center group">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Happy_clients_team_success.jpg"
-             alt="Client Satisfaction"
-             class="rounded-xl w-full md:w-[90%] h-[250px] md:h-[300px] object-cover blur-[6px] brightness-75 transition-all duration-700 group-hover:blur-[2px] group-hover:brightness-100">
-        <div class="absolute bottom-4 right-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white px-4 py-2 rounded-md font-semibold text-sm shadow-lg">
-          ✅ 98% Clients Satisfied
+
+      <div class="bg-[#0f0f10] p-6 rounded-xl">
+        <div class="flex items-start gap-3">
+          <div class="bg-gray-700 w-10 h-10 rounded-md flex items-center justify-center">👥</div>
+          <div>
+            <h3 class="font-semibold">Subscribers & WatchTime</h3>
+            <p class="text-sm text-gray-400 mt-2">Real Engagement</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#0f0f10] p-6 rounded-xl">
+        <div class="flex items-start gap-3">
+          <div class="bg-gray-700 w-10 h-10 rounded-md flex items-center justify-center">📱</div>
+          <div>
+            <h3 class="font-semibold">Social Media Marketing</h3>
+            <p class="text-sm text-gray-400 mt-2">Instagram, Facebook boost</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#0f0f10] p-6 rounded-xl">
+        <div class="flex items-start gap-3">
+          <div class="bg-gray-700 w-10 h-10 rounded-md flex items-center justify-center">📝</div>
+          <div>
+            <h3 class="font-semibold">Custom Promotion Plans</h3>
+            <p class="text-sm text-gray-400 mt-2">Tailored for Your Channel</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 💼 OUR PREMIUM SERVICES SECTION -->
-  <section id="services" style="padding:60px 20px; background:#0a0a0a; color:#fff;">
-    <div style="max-width:1000px; margin:auto; text-align:center;">
-      <h2 style="font-size:2rem; margin-bottom:25px;">💼 Our Premium Services</h2>
-      <ul style="line-height:1.8; font-size:1.05rem; text-align:left; display:inline-block;">
-        <li>• YouTube Monetization (Subscribers + Watch Time)</li>
-        <li>• Full YouTube Channel Management</li>
-        <li>• Video Editing & Thumbnail Design</li>
-        <li>• YouTube Logo & Channel Art Design</li>
-        <li>• Revenue / Dollars Generation Support</li>
-        <li>• Instagram Growth & Marketing</li>
-        <li>• Telegram Promotion Services</li>
-        <li>• and All Types of Social Media Solutions 🌐</li>
-      </ul>
+    <div class="mt-8 text-center">
+     <a 
+  class="inline-block bg-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+  href="pricing.html"
+  target="_blank"
+>
+  Contact Us for Pricing
+</a>
+
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black text-gray-400 text-center py-6 mt-10 border-t border-gray-800">
-    <p class="text-sm">© 2025 <span class="text-white font-semibold">AdFlux</span>. All Rights Reserved.</p>
-    <p class="text-xs mt-2">Designed & Developed by <span class="text-red-500 font-semibold">AdFlux Team</span></p>
+  <footer class="text-center text-gray-400 py-6">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/918641030951" target="_blank"
+         style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+                background: #25D366; color: white; padding: 12px 30px; border-radius: 8px;
+                text-decoration: none; font-weight: 600; font-size: 16px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s ease-in-out;">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+             style="width: 22px; height: 22px;">
+        WhatsApp
+      </a>
+
+      <!-- Email Button -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adfluxads@gmail.com" target="_blank"
+         style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+                background: #007bff; color: white; padding: 12px 30px; border-radius: 8px;
+                text-decoration: none; font-weight: 600; font-size: 16px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15); transition: all 0.2s ease-in-out;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"
+             style="width: 22px; height: 22px;">
+        Email
+      </a>
+    </div>
   </footer>
 
 </body>
